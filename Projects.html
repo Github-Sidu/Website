@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sidharth Sundar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #d1d5db; }
+        .nav-link { @apply text-gray-300 hover:text-cyan-400 transition-colors px-4 py-2 rounded-md text-sm font-medium; }
+        .nav-link.active { @apply bg-gray-900 text-white; }
+        
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1.2s ease-in-out, padding 1s ease-in-out, margin-top 0.7s ease-in-out, opacity 0.7s ease-in-out;
+            padding: 0 2rem;
+            opacity: 0;
+        }
+        .project-details.expanded {
+            max-height: 4000px;
+            padding: 0 2rem 2rem;
+            margin-top: 1.5rem;
+            opacity: 1;
+        }
+        .fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-40 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">Sidharth Sundar</a>
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+		        <a href="Education.html" class="nav-link">Education</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="contact.html" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-5 py-2 rounded-lg transition-colors ml-4">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="projects" class="py-12 fade-in-section">
+            <div class="text-center mb-16">
+                <h1 class="text-3xl font-extrabold text-cyan-400 mb-8">Academic & Personal Projects</h1>
+                <p class="text-lg max-w-3xl mx-auto text-gray-400">
+                    A selected set of projects that show my ability to study and solve engineering problems, use modern tools, and deliver clear, proven results. Each project gives practical lessons and useful outcomes that match real needs in today’s industries.
+                </p>
+            </div>
+
+            <div class="space-y-12">
+
+                <div class="flex justify-start">
+                    <div class="project-card expandable w-full md:w-2/3 lg:w-7/12 bg-gray-900/70 rounded-lg border border-gray-800 shadow-lg transition-all duration-300 transform hover:-translate-y-2 hover:border-cyan-600 cursor-pointer">
+                        <div class="p-8 relative">
+                            <h2 class="text-2xl font-bold text-white mb-2">Design-Focused Study of Hydrodynamic Flow Characteristics in Underwater Vehicles</h2>
+                            <p class="text-cyan-400 font-semibold mb-4">ANSYS Fluent – CFD Simulation</p>
+                            <p class="text-gray-300">A simulation project to analyze the external flow over conceptual submarine and submersible models to understand how hull shape affects performance and drag.</p>
+                        </div>
+                        <div class="project-details">
+                            <div class="border-t border-gray-700 pt-6 text-gray-300">
+                                <h3 class="font-bold text-white text-xl mb-4">Models & Meshing</h3>
+                                <p class="mb-6">The conceptual models were created using Autodesk Fusion 360. The study compares a large submarine (approx. 70m x 10m) with the more compact Titan submersible (approx. 17.5m x 5m). A tetrahedral mesh with inflation layers was used to accurately capture flow behavior near the vehicle surfaces.</p>
+                                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                                    <div class="text-center"><img src="Submarine.png" alt="Submarine Model" class="rounded-lg shadow-xl mx-auto"><p class="mt-2 text-sm text-gray-400">Conceptual Submarine Model</p></div>
+                                    <div class="text-center"><img src="Titan.png" alt="Titan Submersible Model" class="rounded-lg shadow-xl mx-auto"><p class="mt-2 text-sm text-gray-400">Titan Submersible Model</p></div>
+                                    <div class="text-center"><img src="Mesh.png" alt="Computational Mesh" class="rounded-lg shadow-xl mx-auto"><p class="mt-2 text-sm text-gray-400">Tetrahedral Mesh with Inflation Layers</p></div>
+                                </div>
+                                <h3 class="font-bold text-white text-xl mb-6">Comparative Simulation Results</h3>
+                                <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
+                                    <div><h4 class="font-semibold text-cyan-400 mb-2">Velocity Contours</h4><p>The submarine's streamlined shape allows for efficient flow acceleration, while the Titan shows a larger, more turbulent wake region, indicating higher form drag.</p></div>
+                                    <img src="Velocity.png" alt="Velocity Contour Comparison" class="rounded-lg shadow-xl">
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
+                                    <div><h4 class="font-semibold text-cyan-400 mb-2">Velocity Streamlines</h4><p>Streamlines around the submarine are more ordered and follow the hull curvature, suggesting higher hydrodynamic efficiency. The Titan shows more chaotic streamlines near the rear, implying less streamlined shaping.</p></div>
+                                    <img src="Streamline.png" alt="Velocity Streamline Comparison" class="rounded-lg shadow-xl">
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
+                                    <div><h4 class="font-semibold text-cyan-400 mb-2">Velocity Vectors</h4><p>The submarine shows a more elongated and symmetric wake due to its streamlined geometry. The Titan exhibits more abrupt flow detachment and a turbulent wake, characteristic of a bluff body.</p></div>
+                                    <img src="Vector.png" alt="Velocity Vector Comparison" class="rounded-lg shadow-xl">
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
+                                    <div><h4 class="font-semibold text-cyan-400 mb-2">Pressure Contours</h4><p>High-pressure zones are visible at the front stagnation points. The pressure drop along the submarine's hull is more gradual, confirming smoother flow and lower drag.</p></div>
+                                    <img src="Pressure.png" alt="Pressure Contour Comparison" class="rounded-lg shadow-xl">
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-8 items-center">
+                                    <div class="text-center"><h4 class="font-semibold text-cyan-400 mb-2">Submarine Performance</h4><img src="Sub_Data.png" alt="Submarine Data Plots" class="rounded-lg shadow-xl mx-auto"><p class="mt-2 text-sm text-gray-400">Drag force increases with velocity, while the drag coefficient remains stable and low.</p></div>
+                                    <div class="text-center"><h4 class="font-semibold text-cyan-400 mb-2">Titan Submersible Performance</h4><img src="Titan_Data.png" alt="Titan Data Plots" class="rounded-lg shadow-xl mx-auto"><p class="mt-2 text-sm text-gray-400">Shows significantly higher drag coefficient due to its less streamlined, bluff body shape.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end">
+                    <div class="project-card expandable w-full md:w-2/3 lg:w-7/12 bg-gray-900/70 rounded-lg border border-gray-800 shadow-lg transition-all duration-300 transform hover:-translate-y-2 hover:border-cyan-600 cursor-pointer">
+                        <div class="p-8 relative">
+                            <h2 class="text-2xl font-bold text-white mb-2">Thermal Conductivity Analysis of Copper</h2>
+                            <p class="text-cyan-400 font-semibold mb-4">Lab-Based Project using TPS 2500S</p>
+                            <p class="text-gray-300">A hands-on experimental project to precisely measure the thermal conductivity of copper at various temperatures using a Hot Disk sensor.</p>
+                        </div>
+                        <div class="project-details">
+                            <div class="border-t border-gray-700 pt-6 text-gray-300">
+                                <h3 class="font-bold text-white text-xl mb-4">Methodology & Equipment</h3>
+                                <p class="mb-6">This experiment utilized the Transient Plane Source (TPS) method with a TPS 2500 S Hot Disk instrument. This is a highly precise technique for determining thermal transport properties. A Hot Disk sensor, consisting of a nickel double spiral, acts as both a heat source and a dynamic temperature sensor, allowing for accurate measurements.</p>
+                                <div class="grid md:grid-cols-3 gap-8 mb-8 items-center">
+                                    <div class="text-center"><img src="TPS.png" alt="TPS 2500S" class="rounded-lg shadow-xl mx-auto"><p class="mt-2 text-sm text-gray-400">TPS 2500S.</p></div>
+                                    <div class="text-center"><img src="Apparatus.png" alt="Sample Holder Setup" class="rounded-lg shadow-xl mx-auto"><p class="mt-2 text-sm text-gray-400">Experimental setup with sample holder.</p></div>
+                                    <div class="text-center"><img src="Sensor.png" alt="Temperature Sensor" class="rounded-lg shadow-xl"><p class="mt-2 text-sm text-gray-400">Hot Disk sensors.</p></div>
+                                </div>
+                                <h3 class="font-bold text-white text-xl mb-6">Experimental Results</h3>
+                                <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
+                                    <div>
+                                        <h4 class="font-bold text-white text-xl mb-2">Key Findings</h4>
+                                        <p>The thermal conductivity of a 50x50x5 mm copper sample was measured at three different temperatures. The results showed high precision and repeatability, with mean conductivity values reaching up to 383.76 W/m·K at room temperature.</p>
+                                        <ul class="list-disc list-inside space-y-2 mt-4">
+                                            <li>At -10°C, Mean Conductivity: <strong>344.42 W/m·K</strong></li>
+                                            <li>At 21°C, Mean Conductivity: <strong>383.76 W/m·K</strong></li>
+                                            <li>At 60°C, Mean Conductivity: <strong>381.45 W/m·K</strong></li>
+                                        </ul>
+                                    </div>
+                                    <img src="Graph.png" alt="Transient Chart at 21°C" class="rounded-lg shadow-xl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-start">
+                    <div class="project-card expandable w-full md:w-2/3 lg:w-7/12 bg-gray-900/70 rounded-lg border border-gray-800 shadow-lg transition-all duration-300 transform hover:-translate-y-2 hover:border-cyan-600 cursor-pointer">
+                        <div class="p-8 relative">
+                            <h2 class="text-2xl font-bold text-white mb-2">Aerodynamic Study of a Sports Ball</h2>
+                            <p class="text-cyan-400 font-semibold mb-4">ANSYS Fluent – Conceptual CFD Analysis</p>
+                            <p class="text-gray-300">A conceptual study using ANSYS Fluent to visualize and understand the complex airflow patterns and flow separation regions around a stationary golf ball.</p>
+                        </div>
+                         <div class="project-details">
+                            <div class="border-t border-gray-700 pt-6 text-gray-300">
+                                <h3 class="font-bold text-white text-xl mb-4">Methodology & Setup</h3>
+                                <p class="mb-6">This conceptual study involved modeling a standard, dimpled golf ball in CAD software and then importing it into ANSYS Fluent. A fluid domain was created around the ball to simulate airflow. The primary goal was not to gather precise numerical data but to visually understand the fundamental aerodynamic principles at play, such as boundary layer separation and wake formation.</p>
+                                <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
+                                    <div class="text-center"><img src="Golf Model.png" alt="Golf Ball Model in ANSYS" class="rounded-lg shadow-xl mx-auto"><p class="mt-2 text-sm text-gray-400">3D model of a dimpled golf ball.</p></div>
+                                    <div class="text-center"><img src="Fluid D.png" alt="Fluid Domain Setup" class="rounded-lg shadow-xl mx-auto"><p class="mt-2 text-sm text-gray-400">Fluid domain setup for external flow analysis.</p></div>
+                                </div>
+                                <h3 class="font-bold text-white text-xl mb-6">Simulation Results & Insights</h3>
+                                <div class="grid md:grid-cols-2 gap-8 mb-8 items-center">
+                                    <div>
+                                        <h4 class="font-semibold text-cyan-400 mb-2">Flow Visualization</h4>
+                                        <p>The simulation visually demonstrated how the dimples on the golf ball's surface create a thin, turbulent boundary layer. This energized layer helps the airflow adhere to the ball's surface for longer, delaying flow separation and resulting in a much smaller wake. This reduction in the wake is the primary reason for the significant decrease in pressure drag, allowing the ball to travel much farther than a smooth sphere.</p>
+                                    </div>
+                                    <img src="Golf Ball V.webp" alt="Velocity Streamlines around a Golf Ball" class="rounded-lg shadow-xl">
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gray-900 border-t border-gray-800 mt-16">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+            <p>&copy; 2025 Sidharth Sundar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade-in animation observer
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+
+            // Click-to-expand functionality for project cards
+            const expandableCards = document.querySelectorAll('.project-card.expandable');
+            expandableCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const details = card.querySelector('.project-details');
+                    details.classList.toggle('expanded');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

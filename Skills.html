@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Sidharth Sundar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display.swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #d1d5db; }
+        .nav-link { @apply text-gray-300 hover:text-cyan-400 transition-colors px-4 py-2 rounded-md text-sm font-medium; }
+        .nav-link.active { @apply bg-gray-900 text-white; }
+        
+        .section-title {
+            @apply text-7xl font-black text-cyan-400 mb-6 text-center tracking-tight;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        }
+        
+        .subsection-title {
+            @apply text-5xl font-extrabold text-white mt-16 mb-8 border-b-2 border-cyan-800 pb-4;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .skill-card {
+            @apply bg-gray-900/70 p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col items-center justify-center text-center h-full transform hover:-translate-y-2;
+        }
+        .logo-container {
+            @apply h-20 mb-4 flex items-center justify-center;
+        }
+        .logo-container img {
+            max-height: 100%; max-width: 100%; object-fit: contain;
+        }
+        
+        /* MODIFIED: Added items-center to vertically align the logo and text block */
+        .skill-card-horizontal {
+            @apply flex-row justify-start text-left items-center;
+        }
+        .skill-card-horizontal .logo-container {
+            @apply mr-6 mb-0 flex-shrink-0;
+        }
+
+        .skill-logo {
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+            filter: grayscale(40%) opacity(85%);
+        }
+        .skill-card:hover .skill-logo {
+            filter: grayscale(0%) opacity(100%);
+            transform: scale(1.1);
+        }
+
+        .fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-40 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">Sidharth Sundar</a>
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+		<a href="Education.html" class="nav-link">Education</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="skills.html" class="nav-link active">Skills</a>
+                <a href="contact.html" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-5 py-2 rounded-lg transition-colors ml-4">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="skills" class="py-12 fade-in-section">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold text-cyan-400 mb-6">Technical Skills</h1>
+                <p class="text-lg max-w-3xl mx-auto text-gray-400">
+                    A summary of the software, programming languages, and technical domains I am proficient in.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-6">CAD & Design Tools</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="Solidworks.png" title="SolidWorks" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/100x100/030712/FFFFFF?text=SW';"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg mt-2">SolidWorks</p>
+                        <p class="text-gray-400 text-sm mt-2">Parametric 3D modeling and assembly design.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="NX CAD.png" title="Siemens NX CAD" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/150x50/030712/FFFFFF?text=Siemens+NX';"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg mt-2">Siemens NX</p>
+                        <p class="text-gray-400 text-sm mt-2">Advanced solutions for manufacturing and design.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="CATIA.png" title="CATIA" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/120x60/030712/FFFFFF?text=CATIA';"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg mt-2">CATIA</p>
+                        <p class="text-gray-400 text-sm mt-2">World-leading software for product design and experience.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="Fusion360.png" title="Fusion 360" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/100x100/030712/FFFFFF?text=F360';"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg mt-2">Fusion 360</p>
+                        <p class="text-gray-400 text-sm mt-2">Cloud-based CAD, CAM, CAE, and PCB software.</p>
+                    </div>
+                    <div class="skill-card skill-card-horizontal md:col-span-2 mx-auto w-full md:w-1/2">
+                        <div class="logo-container">
+                            <img src="Autocad.png" title="AutoCAD" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/100x100/030712/FFFFFF?text=ACAD';"/>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-lg">AutoCAD</p>
+                            <p class="text-gray-400 text-sm mt-1">Precise 2D and 3D drafting and documentation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-6">Simulation & Analysis</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="skill-card skill-card-horizontal md:col-span-2 mx-auto w-full md:w-1/2">
+                        <div class="logo-container">
+                            <img src="Ansys.webp" title="ANSYS Workbench" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/140x50/030712/FFFFFF?text=ANSYS';"/>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-xl">ANSYS Workbench</p>
+                            <p class="text-gray-400 mt-1">Comprehensive use for advanced simulation, including <span class="font-semibold text-white">Fluent (CFD), APDL,</span> and <span class="font-semibold text-white">Structural Analysis.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-6">Programming & Productivity</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" title="Python" class="skill-logo" style="height: 4rem;"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg mt-2">Python</p>
+                        <p class="text-gray-400 text-sm mt-2">Scripting, data analysis, and control algorithms.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="Matlab.png" title="MATLAB" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/140x60/030712/FFFFFF?text=MATLAB';"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg mt-2">MATLAB/Simulink</p>
+                        <p class="text-gray-400 text-sm mt-2">Numerical computation and modeling dynamic systems.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="Word.png" title="Microsoft Word" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/100x100/030712/FFFFFF?text=Word';"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg mt-2">MS Word</p>
+                         <p class="text-gray-400 text-sm mt-2">Professional technical reports and documentation.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="Excel.png" title="Microsoft Excel" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/100x100/030712/FFFFFF?text=Excel';"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg mt-2">MS Excel</p>
+                        <p class="text-gray-400 text-sm mt-2">Analyzing experimental data and managing project info.</p>
+                    </div>
+                    <div class="skill-card skill-card-horizontal md:col-span-2 mx-auto w-full md:w-1/2">
+                        <div class="logo-container">
+                            <img src="PPT.png" title="Microsoft PowerPoint" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='https://placehold.co/100x100/030712/FFFFFF?text=PPT';"/>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-lg">MS PowerPoint</p>
+                            <p class="text-gray-400 text-sm mt-1">Designing clear and impactful technical presentations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div>
+                <h2 class="text-3xl font-bold text-white mb-6">Domain-Specific Knowledge</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="aerodynamics.png" title="Automotive Aerodynamics" alt="Automotive Aerodynamics Logo" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='A.png'"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg">Automotive Aerodynamics</p>
+                        <p class="text-sm text-gray-400 mt-2">Understanding airflow over vehicle bodies to reduce drag, improve stability, and enhance performance, primarily through CFD analysis.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="logo-container">
+                            <img src="battery.png" title="Battery Thermal Management" alt="Battery Thermal Management Logo" class="skill-logo" style="height: 4rem;" onerror="this.onerror=null;this.src='BTM.png'"/>
+                        </div>
+                        <p class="font-semibold text-white text-lg">Battery Thermal Management</p>
+                        <p class="text-sm text-gray-400 mt-2">Knowledge of the principles behind managing heat in EV battery packs to ensure safety, performance, and longevity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-800 mt-16">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+            <p>&copy; 2025 Sidharth Sundar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
